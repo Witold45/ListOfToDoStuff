@@ -25,6 +25,7 @@ namespace To_Do_List
         {
             InitializeComponent();
             taskList = new TaskList();
+            taskList = DataBaseHandler.LoadData();
             rightFrameMainWindow.Content = new MainPage(taskList);
             
 

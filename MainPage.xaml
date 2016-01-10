@@ -19,7 +19,23 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         
-        <ListBox x:Name="listBoxDataSource"></ListBox>
+        <ListView x:Name="listBoxDataSource">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="Auto"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" Width="Auto"/>
+                    <GridViewColumn Header="Time" Width="Auto">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                                <TextBlock Text="{Binding Date}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    <GridViewColumn Header="Multiplier" DisplayMemberBinding="{Binding Multiplier}" Width="Auto"/>
+                    <GridViewColumn Header="Prior" DisplayMemberBinding="{Binding Prior}" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <TextBox x:Name="mainPageTextBox" Grid.Row="1" Margin="0, 3"></TextBox>
         
         <StackPanel Grid.Column="1">

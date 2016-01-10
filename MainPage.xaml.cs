@@ -27,7 +27,7 @@ namespace To_Do_List
         {
             InitializeComponent();
             this.taskList = taskList;
-            
+            FillListBox();
         }
 
         public void FillListBox()
@@ -35,7 +35,10 @@ namespace To_Do_List
             listBoxDataSource.Items.Clear();
             for (int i = 0; i < taskList.CountOfTaskList(); i++)
             {
-                listBoxDataSource.Items.Add(taskList.ReadTask(i).GetTitle());
+                Task task = taskList.ReadTask(i);
+                listBoxDataSource.Items.Add(task);
+                listBoxDataSource.DataContext = task;
+
             }
 
         }
@@ -51,7 +54,7 @@ namespace To_Do_List
         {
             if (mainPageTextBox.Text != "")
             { 
-                Task taskToAdd = new Task(taskList.CountOfTaskList(), mainPageTextBox.Text);
+                Task taskToAdd = new Task(taskList.CountOfTaskList(), mainPageTextBox.Text, TypeOfTask.Daily, 0, DateTime.Now, 0);
                 taskList.AddTask(taskToAdd);
                 FillListBox();
                 //

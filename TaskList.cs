@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace To_Do_List
 {
@@ -23,7 +25,17 @@ namespace To_Do_List
 
         public void RemoveTask(int taskToRemove)
         {
-            task.RemoveAt(taskToRemove);
+            try
+            {
+                task.RemoveAt(taskToRemove);
+            }
+            catch (Exception)
+            {
+                
+                Debug.WriteLine("Brakujący element");
+            }
+            
+            
         }
     }
 }
