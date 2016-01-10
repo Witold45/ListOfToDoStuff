@@ -23,10 +23,10 @@ namespace To_Do_List
 
         }
 
-        public string GetTitle()
+        public override string ToString()
         {
-            return Title;
+            return string.Format("Id: {0}, Title: {1}, Type: {2}, Prior: {3}, Date: {4}, Multiplier: {5}", Id, Title, Type, Prior, Date, Multiplier);
+
         }
-        
     }
 }

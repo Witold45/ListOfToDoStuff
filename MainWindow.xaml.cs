@@ -26,12 +26,17 @@ namespace To_Do_List
             InitializeComponent();
             taskList = new TaskList();
             taskList = DataBaseHandler.LoadData();
+            
             rightFrameMainWindow.Content = new MainPage(taskList);
             
 
             //leftFrameMainWindow.Source = new Uri("MainPage.xml", UriKind.RelativeOrAbsolute);
         }
 
-       
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           DataBaseHandler.DeleteAllDataFromDb();
+           DataBaseHandler.SaveData(taskList);
+        }
     }
 }

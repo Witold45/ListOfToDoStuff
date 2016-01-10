@@ -70,9 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Task.cs" />
-    <Compile Include="TaskList.cs" />
-    <Compile Include="TypeOfTask.cs" />
+    <Compile Include="Classes\Task.cs" />
+    <Compile Include="Classes\TaskList.cs" />
+    <Compile Include="Enums\TypeOfTask.cs" />
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,7 +85,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataBaseHandler.cs" />
+    <Compile Include="Classes\DataBaseHandler.cs" />
     <Compile Include="DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
